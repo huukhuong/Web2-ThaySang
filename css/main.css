@@ -16,19 +16,82 @@ ol, ul {
     list-style: none !important;
 }
 
-.page-footer {
-    background-color: aquamarine;
-    padding: 20px;
+/*  =====================================
+                    HEADER 
+    =====================================*/
+
+
+
+/*  =====================================
+                    FOOTER 
+    =====================================*/
+
+.footer {
+    background-color: #fff;
+    padding-top: 16px;
+    border-top: 2px solid #e2e2e2;
 }
 
-.footer-img {
-    max-width: 200px;
-    height: auto;
+.footer__heading {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #494949;
 }
 
-.footer-icon {
-    display: block;
-    min-width: 20px;
-    max-width: 20px;
+.footer-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    text-decoration: none !important;
+    font-size: 1rem;
+    color: #737373;
+    padding-top: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-item__icon1 {
+    font-size: 1.2rem;
+    position: relative;
+    top: -1px;
+    padding-right: 6px;
+}
+
+.footer-item__icon {
+    font-size: 1.2rem;
+    position: relative;
+    top: -1px;
+    padding-right: 8px;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    background-color: #f5f5f5;
+    margin-top: 36px;
+}
+
+.footer__bottom-lincense-img {
+    height: 48px;
+}
+
+.footer__text {
+    margin: 0;
     text-align: center;
+    font-size: 1rem;
+    color: #727272;
+}
+
+.footer__text-lincense {
+    text-align: center;
+    font-size: 1rem;
+    color: #6B6B7A;
+}
+
+.footer__down {
+    text-align: center;
+    background-color: #fff;
 }
