@@ -12,7 +12,7 @@ if (isset($_POST["btn_submit"])) {
     $password = addslashes($password);
 
     //xử lý đăng nhập bằng MySQL
-    echo $email . '<br/>' . $password;
+    header("Location: ./index.php");
 
     //lưu session
     $_SESSION['email'] = $email;

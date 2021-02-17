@@ -5,22 +5,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
 </head>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="./index.php">Chỗ này cho cái logo</a>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./index.php">WebSiteName</a>
+        </div>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="my-nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Item 1 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Item 2</a>
-                </li>
+            <ul class="nav navbar-nav ml-auto">
+                <li><a class="nav-link" href="#">Home</a></li>
+                <li><a class="nav-link" href="#">Page 1</a></li>
+                <li><a class="nav-link" href="#">Page 2</a></li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <?php
+                session_start();
+                if (!isset($_SESSION['email'])) {
+                    echo '<li> <a class="nav-link" href="./register.php"> <i class="fas fa-user-plus"></i> Đăng kí </a> </li>
+                <li> <a class="nav-link" href="./login.php"> <i class="fas fa-sign-in-alt"></i> Đăng nhập </a> </li>';
+                } else {
+                    echo
+                    '<li> <a class="nav-link" href="#"> ' . $_SESSION['email'] . '</a> </li>
+                <li> <a class="nav-link" id="kk" href="./logout.php">Đăng xuất </a> </li>';
+                }
+                ?>
             </ul>
         </div>
     </div>
 </nav>
+
+<script>
+    try {
+        var x=document.getElementById('kk');
+        if(x)alert("OKOKOK");
+    } catch (error) {
+        
+    }
+</script>

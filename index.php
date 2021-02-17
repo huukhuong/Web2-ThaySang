@@ -14,9 +14,8 @@
     include("./header.php");
     ?>
 
-    <div class="" style="height: 100vh;">
-        <a href="./login.php">Đăng nhập</a>
-        <a href="./register.php">Đăng ký</a>
+    <div class="container" style="height: 100vh;">
+        
     </div>
 
     <?php
