@@ -35,12 +35,3 @@
         </div>
     </div>
 </nav>
-
-<script>
-    try {
-        var x=document.getElementById('kk');
-        if(x)alert("OKOKOK");
-    } catch (error) {
-        
-    }
-</script>
