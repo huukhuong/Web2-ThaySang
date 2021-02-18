@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-header">
@@ -22,13 +23,13 @@
             <ul class="nav navbar-nav ml-auto">
                 <?php
                 session_start();
-                if (!isset($_SESSION['email'])) {
+                if (!isset($_SESSION['username'])) {
                     echo 
                     '<li> <a class="nav-link" href="./register.php?goto=register"> <i class="fas fa-user-plus"></i> Đăng ký </a> </li>
                     <li> <a class="nav-link" href="./login.php?goto=login"> <i class="fas fa-sign-in-alt"></i> Đăng nhập </a> </li>';
                 } else {
                     echo
-                    '<li> <a class="nav-link" href="#"> ' . $_SESSION['email'] . '</a> </li>
+                    '<li> <a class="nav-link" href="#"> ' . $_SESSION['username'] . '</a> </li>
                     <li> <a class="nav-link" id="kk" href="./logout.php">Đăng xuất </a> </li>';
                 }
                 ?>

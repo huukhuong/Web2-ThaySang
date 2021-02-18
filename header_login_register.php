@@ -18,9 +18,9 @@
                 if (isset($_GET['goto'])) {
                     $type = $_GET['goto'];
                     if ($type == 'login') {
-                        echo '<h4 style="color: #fff">Đăng nhập</h4>';
+                        echo '<h4>Đăng nhập</h4>';
                     } else if ($type == 'register'){
-                        echo '<h4 style="color: #fff">Đăng ký</h4>';
+                        echo '<h4>Đăng ký</h4>';
                     }
                 }
                 ?>
