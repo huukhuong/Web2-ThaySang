@@ -25,11 +25,10 @@ if (isset($_POST["btn_submit"])) {
 
 <head>
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <?php
-include("./header.php");
+include("./header_login_register.php");
 ?>
 
 <body>
