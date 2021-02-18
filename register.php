@@ -6,7 +6,7 @@
 </head>
 
 <?php
-include("./header.php");
+include("./header_login_register.php");
 ?>
 
 <body>

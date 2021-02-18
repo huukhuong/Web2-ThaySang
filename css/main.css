@@ -3,6 +3,10 @@
     font-family: "Signika";
 }
 
+:root {
+    --primary-color: #85603f;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +23,9 @@ ol, ul {
 /*  =====================================
                     HEADER 
     =====================================*/
-
+.navbar {
+    background-color: var(--primary-color) !important;
+}
 
 
 /*  =====================================
@@ -29,7 +35,7 @@ ol, ul {
 .footer {
     background-color: #fff;
     padding-top: 16px;
-    border-top: 2px solid #e2e2e2;
+    border-top: 3px solid var(--primary-color);
 }
 
 .footer__heading {
