@@ -1,0 +1,2 @@
+# Web2-ThaySang
+NHỚ IMPORT DATABASE TRƯỚC KHI CHẠY NHA MẤY CĐL
