@@ -1,10 +1,12 @@
+/* THÀNH PHẦN DÙNG CHUNG */
 @font-face {
     src: url('../font/Signika/static/Signika-Regular.ttf');
     font-family: "Signika";
 }
 
 :root {
-    --primary-color: #85603f;
+    --primary-color: #4A5FC1;
+    --hover-color: #4a60c1e5;
 }
 
 * {
@@ -19,6 +21,12 @@
 ol, ul {
     list-style: none !important;
 }
+
+.message_err {
+    font-size: small;
+    color: red;
+}
+
 
 /*  =====================================
                     HEADER 
