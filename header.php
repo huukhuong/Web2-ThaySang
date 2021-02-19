@@ -6,10 +6,69 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
+<header class="header_user d-flex">
+    <div class="container d-flex">
+        <div class="header_left mr-auto d-flex">
+            <ul class="header_list d-flex align-items-center mx-0 my-0">
+                <li class="header_item">
+                    Kết nối: &nbsp;
+                    <a href="#" class="header_item-link">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#" class="header_item-link">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                    <a href="#" class="header_item-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="header_right ml-auto d-flex">
+            <?php
+            session_start();
+            if (!isset($_SESSION['username'])) {
+                echo
+                '<span class="link-user">
+                    <a class="nav-link" href="./register.php?goto=register"> 
+                        <i class="fas fa-user-plus"></i>
+                        Đăng ký 
+                        </a>
+                    <span class="header__user-separator"></span>
+                </span>
+                <span class="link-user">            
+                    <a class="nav-link" href="./login.php?goto=login"> 
+                        <i class="fas fa-sign-in-alt"></i>
+                        Đăng nhập 
+                    </a>
+                </span>';
+            } else {
+                echo
+                '<span class="link-user">
+                    Xin chào
+                    <a class="nav-link" href="#">'
+                    . $_SESSION['username'] .
+                    '</a>
+                    <span class="header__user-separator"></span>
+                </span>
+                <span class="link-user">                
+                    <a class="nav-link" href="./logout.php">
+                        Đăng xuất 
+                    </a>
+                </span>';
+            }
+            ?>
+        </div>
+    </div>
+</header>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./index.php">WebSiteName</a>
+            <a class="navbar-brand" href="./index.php">
+                <img src="./img/Exclusion 1.svg" alt="Logo brand" style="height: 50px;">
+                Business Shop
+            </a>
         </div>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,20 +78,6 @@
                 <li><a class="nav-link" href="#">Home</a></li>
                 <li><a class="nav-link" href="#">Page 1</a></li>
                 <li><a class="nav-link" href="#">Page 2</a></li>
-            </ul>
-            <ul class="nav navbar-nav ml-auto">
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    echo 
-                    '<li> <a class="nav-link" href="./register.php?goto=register"> <i class="fas fa-user-plus"></i> Đăng ký </a> </li>
-                    <li> <a class="nav-link" href="./login.php?goto=login"> <i class="fas fa-sign-in-alt"></i> Đăng nhập </a> </li>';
-                } else {
-                    echo
-                    '<li> <a class="nav-link" href="#"> ' . $_SESSION['username'] . '</a> </li>
-                    <li> <a class="nav-link" id="kk" href="./logout.php">Đăng xuất </a> </li>';
-                }
-                ?>
             </ul>
         </div>
     </div>
