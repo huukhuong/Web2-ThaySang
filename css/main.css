@@ -31,6 +31,12 @@ ol, ul {
     background-color: var(--primary-color) !important;
 }
 
+.header_user {
+    height: 22px;
+    overflow: hidden;
+    background: var(--hover-color);
+}
+
 /*  =====================================
                     FOOTER 
     =====================================*/

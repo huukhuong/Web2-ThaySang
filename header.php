@@ -6,10 +6,37 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
+<div class="header_user d-flex">
+    <?php
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        echo
+        '<a class="nav-link" href="./register.php?goto=register"> 
+            <i class="fas fa-user-plus"></i>
+            Đăng ký 
+        </a>
+        <a class="nav-link" href="./login.php?goto=login"> 
+            <i class="fas fa-sign-in-alt"></i>
+            Đăng nhập 
+        </a>';
+    } else {
+        echo
+        '<a class="nav-link" href="#"> ' 
+            . $_SESSION['username'] . 
+        '</a>
+        <a class="nav-link" href="./logout.php">
+            Đăng xuất 
+        </a>';
+    }
+    ?>
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./index.php">WebSiteName</a>
+            <a class="navbar-brand" href="./index.php">
+                <img src="./img/Exclusion 1.svg" alt="Logo brand" style="height: 50px;">
+                Business Shop
+            </a>
         </div>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,20 +46,6 @@
                 <li><a class="nav-link" href="#">Home</a></li>
                 <li><a class="nav-link" href="#">Page 1</a></li>
                 <li><a class="nav-link" href="#">Page 2</a></li>
-            </ul>
-            <ul class="nav navbar-nav ml-auto">
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    echo 
-                    '<li> <a class="nav-link" href="./register.php?goto=register"> <i class="fas fa-user-plus"></i> Đăng ký </a> </li>
-                    <li> <a class="nav-link" href="./login.php?goto=login"> <i class="fas fa-sign-in-alt"></i> Đăng nhập </a> </li>';
-                } else {
-                    echo
-                    '<li> <a class="nav-link" href="#"> ' . $_SESSION['username'] . '</a> </li>
-                    <li> <a class="nav-link" id="kk" href="./logout.php">Đăng xuất </a> </li>';
-                }
-                ?>
             </ul>
         </div>
     </div>
