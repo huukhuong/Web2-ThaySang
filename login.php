@@ -72,8 +72,9 @@ include("./header_login_register.php");
                         </div>
                     </div>
                 </div>
-                <div class="my-5 col brand_logo">
-                    <img src="./img/Exclusion 1.svg" alt="Brand_logo">
+                <div class="my-auto col brand_logo">
+                    <img src="./img/Exclusion 1.svg" alt="Brand logo">
+                    <h3 style="color: #fff;">Business Shop</h3>
                 </div>
             </div>
         </div>
