@@ -72,6 +72,10 @@ include("./header_login_register.php");
                         </div>
                     </div>
                 </div>
+                <div class="my-auto col brand_logo">
+                    <img src="./img/Exclusion 1.svg" alt="Brand logo">
+                    <h3 style="color: #fff;">Business Shop</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -81,11 +85,11 @@ include("./header_login_register.php");
     ?>
 
     <script>
-        
         try {
             let message = document.getElementById('fail_login');
             if(message) {
                 alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+                window.history.back();
             }
         }
         catch(e) {}

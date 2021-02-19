@@ -50,3 +50,12 @@
     color: var(--hover-color);
     text-decoration: underline !important;
 }
+
+@media only screen and (max-width: 600px) {
+    .brand_logo {
+        display: none !important;
+    }
+    .brand_logo img {
+        display: none !important;
+    }
+}

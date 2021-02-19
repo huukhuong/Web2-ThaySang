@@ -10,7 +10,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./index.php">WebSiteName</a>
+            <a class="navbar-brand" href="./index.php">
+                <img src="./img/Exclusion 2.svg" alt="Logo brand" style="height: 50px;">
+                Business Shop
+            </a>
         </div>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
@@ -19,7 +22,7 @@
                     $type = $_GET['goto'];
                     if ($type == 'login') {
                         echo '<h4>Đăng nhập</h4>';
-                    } else if ($type == 'register'){
+                    } else if ($type == 'register') {
                         echo '<h4>Đăng ký</h4>';
                     }
                 }
