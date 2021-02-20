@@ -46,23 +46,22 @@
             } else {
                 echo
                 '<span class="link-user">
-                    Xin chào
                     <a class="nav-link" href="#">'
                     . $_SESSION['username'] .
                     '</a>
-                    <span class="header__user-separator"></span>
-                </span>
-                <span class="link-user">                
-                    <a class="nav-link" href="./logout.php">
-                        Đăng xuất 
-                    </a>
-                </span>';
+                        <span class="header__user-separator"></span>
+                    </span>
+                    <span class="link-user">                
+                        <a class="nav-link" href="./logout.php">
+                            Đăng xuất 
+                        </a>
+                    </span>';
             }
             ?>
         </div>
     </div>
 </header>
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="./index.php">
@@ -74,11 +73,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="my-nav" class="collapse navbar-collapse">
+
+            <div class="mx-auto navbar-search row">
+                <input type="text" id="input-search" placeholder="Tìm kiếm..." />
+                <button class="btn btn-search" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
             <ul class="nav navbar-nav ml-auto">
                 <li><a class="nav-link" href="#">Home</a></li>
                 <li><a class="nav-link" href="#">Page 1</a></li>
                 <li><a class="nav-link" href="#">Page 2</a></li>
             </ul>
+
         </div>
     </div>
 </nav>

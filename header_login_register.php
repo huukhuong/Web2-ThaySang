@@ -12,21 +12,16 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="./index.php">
                 <img src="./img/Exclusion 2.svg" alt="Logo brand" style="height: 50px;">
-                Business Shop
-            </a>
-        </div>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
                 <?php
                 if (isset($_GET['goto'])) {
                     $type = $_GET['goto'];
                     if ($type == 'login') {
-                        echo '<h4>Đăng nhập</h4>';
+                        echo 'Đăng nhập';
                     } else if ($type == 'register') {
-                        echo '<h4>Đăng ký</h4>';
+                        echo 'Đăng ký';
                     }
                 }
                 ?>
-            </li>
-        </ul>
+            </a>
+        </div>
 </nav>
