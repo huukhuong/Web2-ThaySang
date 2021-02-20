@@ -61,7 +61,7 @@
         </div>
     </div>
 </header>
-<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+<nav class="navbar navbar-home navbar-expand-md navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="./index.php">

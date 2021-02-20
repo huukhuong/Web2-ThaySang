@@ -28,7 +28,7 @@ ol, ul {
                     HEADER 
     =====================================*/
 
-.navbar {
+.navbar-home {
     background-image: linear-gradient(var(--primary-color), var(--hover-color));
 }
 
