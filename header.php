@@ -82,7 +82,7 @@
             </div>
 
             <ul class="nav navbar-nav ml-auto">
-                <li><a class="nav-link" href="#">Home</a></li>
+                <li><a class="nav-link active" href="./index.php">Home</a></li>
                 <li><a class="nav-link" href="#">Page 1</a></li>
                 <li><a class="nav-link" href="#">Page 2</a></li>
             </ul>

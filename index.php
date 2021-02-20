@@ -14,8 +14,13 @@
     include("./header.php");
     ?>
 
-    <div class="container" style="height: 100vh;">
-        
+    <div class="container">
+        <div class="content_web">
+            <?php
+            include("./carousel.php");
+            include("./content.php");
+            ?>
+        </div>
     </div>
 
     <?php
