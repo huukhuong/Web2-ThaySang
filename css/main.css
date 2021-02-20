@@ -8,6 +8,7 @@
 :root {
     --primary-color: #4A5FC1;
     --hover-color: #3652ce;
+    --text-color: #333;
 }
 
 * {
@@ -28,7 +29,7 @@ ol, ul {
     =====================================*/
 
 .navbar {
-    background-color: var(--primary-color) !important;
+    background-image: linear-gradient(var(--primary-color), var(--hover-color));
 }
 
 .header_user {
@@ -81,9 +82,47 @@ ol, ul {
     right: 0;
 }
 
+/* SEARCH BAR */
+
+.navbar-search {
+    background: #fff;
+    flex: 1;
+    height: 40px;
+    margin: 0 20px 0 20px;
+    border-radius: 4px;
+    align-items: center;
+}
+
+#input-search {
+    border: none;
+    outline: none;
+    font-size: 14pt;
+    padding: 0 10px;
+    color: var(--text-color);
+    flex: 1;
+}
+
+.btn-search {
+    color: #fff;
+    font-size: 14pt;
+    background: var(--primary-color);
+    outline: none !important;
+    box-shadow: none !important;
+    height: 34px;
+    width: 62px;
+    position: relative;
+    margin: 0 3px;
+}
+
+.btn-search i {
+    position: absolute;
+    top: 6px;
+    right: 21px;
+}
+
 /* RESPONSIVE HEADER */
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .header_left {
         display: none !important;
     }

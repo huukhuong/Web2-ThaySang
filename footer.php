@@ -45,7 +45,7 @@
                 </ul>
             </div>
             <div class="col-md-3 col-6">
-                <h3 class="footer__heading">Theo dõi</h3>
+                <h3 class="footer__heading">Kết nối</h3>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a href="#" class="footer-item__link">

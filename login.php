@@ -7,6 +7,7 @@ if (!$connect->set_charset("utf8")) {
 
 if (isset($_POST["btn_submit"])) {
     session_start();
+
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -20,7 +21,7 @@ if (isset($_POST["btn_submit"])) {
     $sql = "select * from TaiKhoan where tendangnhap = '$username' and matkhau = '$password' ";
     $query = mysqli_query($connect, $sql);
     $num_rows = mysqli_num_rows($query);
-    
+
     if ($num_rows == 0) {
         echo "<span id='fail_login' style='display: none;'>tên đăng nhập hoặc mật khẩu không đúng!</span>";
     } else {
@@ -87,12 +88,11 @@ include("./header_login_register.php");
     <script>
         try {
             let message = document.getElementById('fail_login');
-            if(message) {
+            if (message) {
                 alert("Tên đăng nhập hoặc mật khẩu không đúng!");
                 window.history.back();
             }
-        }
-        catch(e) {}
+        } catch (e) {}
     </script>
 </body>
 
