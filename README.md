@@ -1,2 +1,2 @@
 # Web2-ThaySang
-NHỚ IMPORT DATABASE TRƯỚC KHI CHẠY NHA MẤY CĐL
+Đây là cái readme, viết cho có thoy
