@@ -12,12 +12,12 @@
 <body>
     <?php
     include("./header.php");
+    include("./carousel.php");
     ?>
 
     <div class="container">
         <div class="content_web">
             <?php
-            include("./carousel.php");
             include("./content.php");
             ?>
         </div>
