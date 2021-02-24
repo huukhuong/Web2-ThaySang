@@ -15,12 +15,10 @@
     include("./carousel.php");
     ?>
 
-    <div class="container">
-        <div class="content_web">
-            <?php
-            include("./content.php");
-            ?>
-        </div>
+    <div class="content_web">
+        <?php
+        include("./content.php");
+        ?>
     </div>
 
     <?php
