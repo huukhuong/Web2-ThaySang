@@ -4,7 +4,8 @@ $connect = new mysqli("localhost", "root", "", "do_an_web2");
 if (!$connect->set_charset("utf8")) {
     printf($connect->error);
 }
-
+if(1==1)
+echo '';
 if (isset($_POST["btn_submit"])) {
     session_start();
 
