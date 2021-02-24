@@ -7,7 +7,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -24,13 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trang chủ</a>
+                    <a class="nav-link" href="#carouselExampleIndicators">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dịch vụ</a>
+                    <a class="nav-link" href="#about">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Danh mục</a>
+                    <a class="nav-link disabled" href="#content">Danh mục</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -39,10 +39,10 @@
                 if (!isset($_SESSION['username'])) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php" id="login">Đăng nhập</a>
+                        <a class="nav-link" href="./login.php?goto=login" id="login">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./register.php" id="signup">Đăng ký</a>
+                        <a class="nav-link" href="./register.php?goto=register" id="signup">Đăng ký</a>
                     </li>
                 <?php
                 } else {
@@ -86,7 +86,7 @@
 <script>
     // Scroll to solid navbar
     window.addEventListener('scroll', function() {
-        let navbar = document.querySelector('nav');
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        let navbar = $('nav');
+        navbar.toggleClass('scrolled', window.scrollY > 20);
     });
 </script>

@@ -23,7 +23,11 @@ if (isset($_POST["btn_submit"])) {
     $num_rows = mysqli_num_rows($query);
 
     if ($num_rows == 0) {
-        echo "<span id='fail_login' style='display: none;'>tên đăng nhập hoặc mật khẩu không đúng!</span>";
+        echo 
+        '<script>
+            alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+            window.history.back();
+        </script>';
     } else {
         //tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
         $_SESSION['username'] = $username;
@@ -84,16 +88,6 @@ include("./header_login_register.php");
     <?php
     include("./footer.php");
     ?>
-
-    <script>
-        try {
-            let message = document.getElementById('fail_login');
-            if (message) {
-                alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-                window.history.back();
-            }
-        } catch (e) {}
-    </script>
 </body>
 
 </html>
