@@ -1,42 +1,26 @@
 <?php
-$connect = new mysqli("localhost", "root", "", "do_an_web2");
-
-if (!$connect->set_charset("utf8")) {
-    printf($connect->error);
-}
-
 if (isset($_POST["btn_submit"])) {
     session_start();
 
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    //làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
+    // làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
+    // mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
     $username = strip_tags($username);
     $username = addslashes($username);
     $password = strip_tags($password);
     $password = addslashes($password);
 
-    //xử lý đăng nhập bằng MySQL
-    $sql = "select * from TaiKhoan where tendangnhap = '$username' and matkhau = '$password' ";
-    $query = mysqli_query($connect, $sql);
-    $num_rows = mysqli_num_rows($query);
-
-    if ($num_rows == 0) {
-        echo 
-        '<script>
-            alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-            window.history.back();
-        </script>';
-    } else {
-        //tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
-        $_SESSION['username'] = $username;
-        header('Location: index.php');
+    require('connection_lib.php');
+    $connect = new Connection();
+    $query = "SELECT * FROM TaiKhoan WHERE TenDangNhap='$username' AND MatKhau='$password'";
+    $data = $connect->getRow($query);
+    if ($data) {
+        $_SESSION['username'] = $data['TenDangNhap'];
+        header("Location: ./index.php");
     }
-
-    mysqli_close($connect);
 }
-
 ?>
 
 <!DOCTYPE html>
