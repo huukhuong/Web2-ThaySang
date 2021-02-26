@@ -11,6 +11,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = addslashes($username);
     $password = strip_tags($password);
     $password = addslashes($password);
+    $password = md5($password);
 
     require('../connection_lib.php');
     $connect = new Connection();
