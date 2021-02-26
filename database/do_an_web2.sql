@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 18, 2021 lúc 11:53 AM
+-- Thời gian đã tạo: Th2 26, 2021 lúc 07:27 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.11
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `taikhoan` (
   `TenDangNhap` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MatKhau` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `HoTen` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `LoaiTK` varchar(2) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -37,9 +38,9 @@ CREATE TABLE `taikhoan` (
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`TenDangNhap`, `MatKhau`, `LoaiTK`) VALUES
-('kh1', '11111111', 'KH'),
-('kh2', '22222222', 'KH');
+INSERT INTO `taikhoan` (`TenDangNhap`, `MatKhau`, `HoTen`, `LoaiTK`) VALUES
+('kh1', '1bbd886460827015e5d605ed44252251', 'Ngô Phú Khang', 'KH'),
+('kh2', 'bae5e3208a3c700e3db642b6631e95b9', 'Võ Hoàng Kiệt', 'KH');
 
 --
 -- Chỉ mục cho các bảng đã đổ
