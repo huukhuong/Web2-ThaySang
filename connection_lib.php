@@ -58,7 +58,7 @@ class Connection
     {
         $result = mysqli_query($this->conn, $query);
         if (!$result) {
-            return false; // câu truy ván bị sai
+            return false; // câu truy vấn bị sai
         }
 
         $row = mysqli_fetch_assoc($result);
