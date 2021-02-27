@@ -7,8 +7,9 @@
                             $connect = new Connection();
     B3: Thực hiện lệnh qua biến $sql || INSERT, DELETE, UPDATE như nhau
                             vd: DELETE:
-                            $sql = "DELETE * FROM TaiKhoan WHERE TenDangNhap='username'";
+                            $sql = "DELETE * FROM taikhoan WHERE TenDangNhap='username'";
                             $connect->execute($sql);
+    ==========LƯU Ý: Tên bảng viết thường===============
 */
 class Connection
 {

@@ -1,7 +1,7 @@
 <?php
+
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     session_start();
-
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -15,7 +15,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
     require('../connection_lib.php');
     $connect = new Connection();
-    $query = "SELECT * FROM TaiKhoan WHERE TenDangNhap='$username' AND MatKhau='$password'";
+    $query = "SELECT * FROM taikhoan WHERE TenDangNhap='$username' AND MatKhau='$password'";
     $data = $connect->getRow($query);
     if ($data) {
         $_SESSION['username'] = $data['TenDangNhap'];
