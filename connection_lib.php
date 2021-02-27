@@ -9,7 +9,7 @@
                             vd: DELETE:
                             $sql = "DELETE * FROM taikhoan WHERE TenDangNhap='username'";
                             $connect->execute($sql);
-    ==========LƯU Ý: Tên bảng viết thường===============
+    ===============LƯU Ý: Tên bảng viết thường===============
 */
 class Connection
 {
