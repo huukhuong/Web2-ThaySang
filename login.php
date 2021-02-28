@@ -18,10 +18,10 @@ include("./header_login_register.php");
             <div class="row text-center">
                 <div class="login-wrap my-5 col">
                     <h3 class="text-center pt-5 pb-3 my-0">Đăng nhập</h3>
-                    <div class="alert alert-danger" id="message_err">
+                    <div class="message alert alert-danger" id="message_err">
                         <b>Thông tin đăng nhập không đúng!</b> <br> Vui lòng kiểm tra lại
                     </div>
-                    <div class="alert alert-success" id="message_success">
+                    <div class="message alert alert-success" id="message_success">
                         <b>Đăng nhập thành công!</b> <br>
                         Bạn sẽ được chuyển về <a href="./index.php" class="log-link">Trang chủ</a>
                         sau <span id="seconds-count">5</span> giây.
@@ -30,13 +30,16 @@ include("./header_login_register.php");
                         <div class="col">
                             <form id="myForm" name="myForm" method="post">
                                 <div class="form-group text-left">
-                                    <input type="text" id="username" name="username" class="form-control" autofocus placeholder="Tên đăng nhập">
+                                    <input type="text" id="username" name="username" class="form-control" autofocus>
+                                    <span class="lblForm focus" data-placeholder="Tên đăng nhập"></span>
                                 </div>
-                                <div class="form-group text-left">
-                                    <input type="password" id="password" name="password" class="form-control" autocomplete="on" placeholder="Mật khẩu">
-                                    <a class="log-link" href="#">Quên mật khẩu?</a>
+                                <div class="form-group text-left mt-5">
+                                    <input type="password" id="password" name="password" class="form-control">
+                                    <span class="lblForm" data-placeholder="Mật khẩu"></span>
                                 </div>
-                                <button type="button" id="btn_login" name="btn_submit" class="btn btn_login">Đăng nhập</button>
+                                <a class="log-link" href="#">Quên mật khẩu?</a>
+                                <button type="button" id="btn_login" name="btn_submit" class="btn btn_login">Đăng
+                                    nhập</button>
                                 <p class="pt-4">
                                     Lần đầu truy cập?
                                     <a class="log-link" href="./register.php?goto=register">Đăng ký tài khoản</a>
@@ -61,40 +64,29 @@ include("./header_login_register.php");
         $(document).ready(function() {
             // Đăng nhập bằng AJAX
             $('#btn_login').click(function() {
+                $('.message').css('display', 'none');
+
                 let username = $('#username').val();
                 let password = $('#password').val();
-
-                if ($.trim(username).length > 0 && $.trim(password).length > 0) {
-                    $.ajax({
-                        url: './service/login_service.php',
-                        method: 'post',
-                        data: {
-                            username: username,
-                            password: password
-                        },
-                        success: function(data) {
-                            if (data) {
-                                successLogin();
-                            } else {
-                                $('#message_err').css('display', 'block');
-                            }
+                
+                $.ajax({
+                    url: './service/login_service.php',
+                    method: 'post',
+                    data: {
+                        username: username,
+                        password: password
+                    },
+                    success: function(data) {
+                        if (data) {
+                            successLogin();
+                        } else {
+                            $('#message_err').css('display', 'block');
                         }
-                    });
-                } else {
-                    let txt_user = $('#username');
-                    let txt_password = $('#password');
-                    if ($.trim(username).length <= 0) {
-                        txt_user.css('border-color', 'red');
                     }
-                    if ($.trim(password).length <= 0) {
-                        txt_password.css('border-color', 'red');
-                    }
-                    return false;
-                }
+                });
             });
 
             function successLogin() {
-                $('#message_err').css('display', 'none');
                 $('#message_success').css('display', 'block');
                 let i = 4;
                 let seconds = $('#seconds-count');
@@ -116,6 +108,23 @@ include("./header_login_register.php");
             $("#password").keyup(function(event) {
                 if (event.keyCode === 13) {
                     $("#btn_login").click();
+                }
+            });
+
+
+            // Animation Form
+            const lblUser = $("#lblUser");
+            const lblpass = $("#lblPass");
+            $(".form-control").focus(function() {
+                let elm = $(this).parent();
+                let lbl = elm.find($(".lblForm"));
+                lbl.addClass("focus");
+            });
+            $(".form-control").blur(function() {
+                if ($(this).val() == "") {
+                    let elm = $(this).parent();
+                    let lbl = elm.find($(".lblForm"));
+                    lbl.removeClass("focus");
                 }
             });
         });
