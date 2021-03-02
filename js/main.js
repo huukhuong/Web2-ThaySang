@@ -5,6 +5,6 @@ $("a[href*='#']:not([href='#])").click(function () {
 
   $('html,body').stop().animate({
     scrollTop: $(target).offset().top // srcoll lên top element
-  }, 1000); //1s
+  }, 10);
   event.preventDefault(); //chặn event mặc định khi click thẻ a
 });
