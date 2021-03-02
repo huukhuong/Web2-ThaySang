@@ -42,7 +42,7 @@
                         <a class="nav-link" href="./login.php?goto=login" id="login">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./register.php?goto=register" id="signup">Đăng ký</a>
+                        <a class="nav-link" href="./signup.php?goto=register" id="signup">Đăng ký</a>
                     </li>
                 <?php
                 } else {
